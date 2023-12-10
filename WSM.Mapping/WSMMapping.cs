@@ -53,10 +53,12 @@ namespace WSM.Mapping
             }
             return result;
         }
+
         public static TDes Map<TDes, TSource>(TSource source) where TDes : class, new()
         {
             return Map(typeof(TSource), typeof(TDes), source) is TDes des ? des : default;
         }
+
         public static List<TDes> MapList<TDes, TSource>(List<TSource> listSource) where TDes : class, new()
         {
             List<TDes> list = new List<TDes>();
